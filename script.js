@@ -29,7 +29,7 @@ const therapists = [
     {name: "Dorian Mahulawde",city: "Beachwood", zip: "44122", phone: "(216) 400-8602 x800",link:"https://www.psychologytoday.com/us/therapists/dorian-mahulawde-beachwood-oh/421676"},
     {name: "Hina Ansari ",city: "Solon", zip: "44139", phone: "(216) 523-4278 ",link:"https://www.psychologytoday.com/us/therapists/hina-ansari-owner-the-healing-light-therapy-llc-solon-oh/766833"},
     {name: "Tanya D Wright",city: "Solon", zip: "44139", phone: "(440) 709-8075 ",link:"https://www.psychologytoday.com/us/therapists/tanya-d-wright-solon-oh/1162907"},
-    {name: "",city: "Solon", zip: "44139", phone: "(216) 400-8602 ",link:""}]
+    {name: "Jennifer Simon",city: "Solon", zip: "44139", phone: "(216) 502-3325 ",link:"https://www.psychologytoday.com/us/therapists/jennifer-simon-solon-oh/162505"}]
     // Search button event
 document.getElementById("searchBtn").addEventListener("click", () => {
     const input = document.getElementById("locationInput").value.toLowerCase().trim();
