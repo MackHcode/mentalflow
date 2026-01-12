@@ -1,5 +1,9 @@
+
+
+
+/*Get help page - mack*/
 body {
-    background-color:floralwhite;
+    background-color:#A8DADC;
     font-family: 'Segoe UI', sans-serif;
     color: #000;
 }
@@ -19,6 +23,25 @@ h1 {
 }
 .contact-title {
     color: #000;
+}
+
+/*for home page images */
+.card img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+/* Nav bar styling -Dashawn */
+#flowbar{
+  background-color: darkslategrey;
+      --bs-bg-opacity: 1;
+
+}
+
+.flowtext{
+      color: #fff;
+      text-decoration: none;
 }
 
 
@@ -151,7 +174,68 @@ h1 {
   color: #25b360;                 
 }
 
-/* FOOTER */
+/* Calendar Grid Styling * -mack*/
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
+  gap: 20px;
+}
+
+.calendar-cell {
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  min-height: 150px;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.calendar-cell h5 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.calendar-cell p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Awareness calendar links - Azamat */
+.month-link,
+.month-link:visited {
+  color: #ffffff;          /* white text */
+  text-decoration: none;   /* remove underline */
+}
+
+/* Optional hover effect - Azamat */
+.month-link:hover {
+  color: #e6f4ea;          /* slightly lighter white/green */
+  text-decoration: none;  /* still no underline */
+}
+
+.calendar-cell:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* FOOTER -mack */
 .site-footer {
   background-color: #1f2933;
   color: #ffffff;
@@ -175,4 +259,9 @@ h1 {
 .hotline {
   color: #fca5a5;
   font-weight: bold;
+}
+
+/* Images - Da'shawn */
+#handhold{
+    max-height: 50%;
 }
