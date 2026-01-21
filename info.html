@@ -18,27 +18,65 @@
 </head>
 
 <body>
+   <!-- Background music -->
+  <audio id="background-music" loop autoplay>
+    <source src="media/music4.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Mute/unmute button -->
+  <button class="press" onclick="toggleMute()">
+    Mute/Unmute Music
+  </button>
+
+  <script>
+    const bgMusic = document.getElementById("background-music");
+
+    document.addEventListener("click", function startMusic() {
+      if (bgMusic.paused) {
+        bgMusic.play().catch(err => console.log("Autoplay blocked:", err));
+      }
+      document.removeEventListener("click", startMusic);
+    });
+
+    window.addEventListener("load", () => {
+      const savedTime = sessionStorage.getItem("musicTime");
+      if (savedTime) {
+        bgMusic.currentTime = parseFloat(savedTime);
+        bgMusic.play().catch(() => {});
+      }
+    });
+
+    window.addEventListener("beforeunload", () => {
+      sessionStorage.setItem("musicTime", bgMusic.currentTime);
+    });
+
+    function toggleMute() {
+      bgMusic.muted = !bgMusic.muted;
+    }
+    </script>
+
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-dark" href="#">Mental Flow</a>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm fw-bolder" fs-4 id="flowbar">
+      <div class="container">
+        <a class="flowtext fw-bold fs-4" href="#">Mental Flow</a>
 
-    <!-- Hamburger -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Mobile hamburger -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Links -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active text-dark" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="contact.html">Get Help</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="info.html">More Info</a></li>
-        <li class="nav-item"><a class="nav-link text-dark" href="awareness.html">Awareness</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active text-light" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="contact.html">Get Help</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="info.html">More Info</a></li>
+            <li class="nav-item"><a class="nav-link text-light" href="awareness.html">Awareness </a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   <!-- MAIN CONTENT -->
   <main class="container my-5 info-page">
@@ -117,7 +155,7 @@
         feel less alone.
       </p>
 
-      <ul class="list-unstyled">
+      <ul class="list-unstyled"> <!--Links-->
         <li>
           <a href="https://www.nami.org" target="_blank">
             National Alliance on Mental Illness (NAMI)
@@ -161,10 +199,13 @@
         <div class="col-md-6">
           <div class="story-card h-100">
             <p>
-              “Depression made me feel invisible. Asking for help was difficult,
-              but it became the first step toward healing.”
+              “For as long as I can remember, I've been worried about every little part of my life. 
+              As I got older I realized that wasn't normal, so I reached out. When I realized I had anxiety, and that anxiety
+              came with a heavy, sinking feeling. I ended up in a pretty dark place, but, with the help of my counselor, family,
+              friends, and community, I found ways to work around it. I still get sad, I still get anxious, but now it doesn't feel 
+              so hopeless. Remember, reaching out can make a huge difference.”
             </p>
-            <span>— Site Creator</span>
+            <span>— Da'shawn H -Site Creator</span>
           </div>
         </div>
 
