@@ -8,10 +8,17 @@ body {
     color: #000;
 }
 
+.bg-primary {
+    background-color: rgb(254, 254, 254) !important;
+}
+
 h1 {
-    color: #3a8ca5;
+    color: darkslategrey;
     text-align: center;
 }
+
+
+
 
 .card {
     border-radius: 15px;
@@ -235,6 +242,10 @@ h1 {
 }
 
 
+
+
+
+
 /* FOOTER -mack */
 .site-footer {
   background-color: #1f2933;
@@ -264,4 +275,23 @@ h1 {
 /* Images - Da'shawn */
 #handhold{
     max-height: 50%;
+}
+/*styles for button*/
+/*styles for button*/
+.press {
+    background-color: #1482ffa6;
+    color: white;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2); /* subtle shadow */
+    cursor: pointer;
+    position: fixed; /* keeps it top-right */
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.press:hover {
+    background-color: lightblue; /* simple hover color change */
 }
